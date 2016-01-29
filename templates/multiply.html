@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 
-<head>
-	<title>Multiplying</title>
-</head>
+{% block title %}
+	Multiplying | {{ super() }}
+{% endblock %}
 
-<body>
-	<h1>{{ num1 }} * {{num2}} = {{num1 * num2}}</h1>
-</body>
-
-</html>
+{% block content %}	
+	<h1>Multiply Numbers</h1>
+	<h2>{{ num1 }} * {{num2}} = {{num1 * num2}}</h2>
+{% endblock %}

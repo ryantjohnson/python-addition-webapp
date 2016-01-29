@@ -9,8 +9,8 @@ app = Flask(__name__)
 @app.route("/")
 @app.route("/<name>")
 def index(name="Ryan"):
-	name = request.args.get('name' , name)
-	return "Hello, {}!".format(name)
+	context = {"name":name}
+	return render_template("index.html",**context)
 
 
 @app.route('/add/<int:num1>/<int:num2>')
