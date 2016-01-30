@@ -29,5 +29,13 @@ def multiply(num1, num2):
 	context = {'num1':num1, 'num2':num2}
 	return render_template("multiply.html", **context)
 
+@app.route('/subtract/<int:num1>/<int:num2>')
+@app.route('/subtract/<float:num1>/<int:num2>')
+@app.route('/subtract/<int:num1>/<float:num2>')
+@app.route('/subtract/<float:num1>/<float:num2>')
+def subtract(num1, num2):
+	context = {'num1':num1, 'num2':num2}
+	return render_template("subtract.html", **context)
+
 if __name__ == "__main__":
 	app.run(debug=True, port=5000)
